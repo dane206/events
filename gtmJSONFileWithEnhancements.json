@@ -1,0 +1,1335 @@
+{
+  "containerVersion": {
+    "container": {
+      "publicId": "GTM-XXXXXX"
+    },
+    "variable": [
+      {
+        "name": "dynamic_page_title",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "pageTitle"
+          }
+        ]
+      },
+      {
+        "name": "dynamic_page_url",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "pageUrl"
+          }
+        ]
+      },
+      {
+        "name": "dynamic_user_id",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "userId"
+          }
+        ]
+      },
+      {
+        "name": "dynamic_session_id",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "sessionId"
+          }
+        ]
+      },
+      {
+        "name": "dynamic_product_id",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "productId"
+          }
+        ]
+      },
+      {
+        "name": "dynamic_product_name",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "productName"
+          }
+        ]
+      },
+      {
+        "name": "dynamic_cart_value",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "cartValue"
+          }
+        ]
+      },
+      {
+        "name": "dynamic_currency",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "currency"
+          }
+        ]
+      },
+      {
+        "name": "dynamic_checkout_step",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "checkoutStep"
+          }
+        ]
+      },
+      {
+        "name": "dynamic_transaction_id",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "transactionId"
+          }
+        ]
+      },
+      {
+        "name": "dynamic_affiliation",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "affiliation"
+          }
+        ]
+      },
+      {
+        "name": "dynamic_order_value",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "orderValue"
+          }
+        ]
+      },
+      {
+        "name": "dynamic_tax",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "tax"
+          }
+        ]
+      },
+      {
+        "name": "dynamic_shipping_cost",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "shippingCost"
+          }
+        ]
+      },
+      {
+        "name": "dynamic_coupon_code",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "couponCode"
+          }
+        ]
+      },
+      {
+        "name": "dynamic_refund_value",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "refundValue"
+          }
+        ]
+      },
+      {
+        "name": "dynamic_user_email",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "userEmail"
+          }
+        ]
+      },
+      {
+        "name": "dynamic_user_name",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "userName"
+          }
+        ]
+      }
+    ],
+    "trigger": [
+      {
+        "triggerId": "1",
+        "name": "Page View Trigger",
+        "type": "PAGEVIEW",
+        "parameter": [
+          {
+            "type": "ENUM",
+            "key": "type",
+            "value": "DOM_READY"
+          }
+        ]
+      },
+      {
+        "triggerId": "2",
+        "name": "Product Impression Trigger",
+        "type": "PAGEVIEW",
+        "parameter": [
+          {
+            "type": "ENUM",
+            "key": "type",
+            "value": "DOM_READY"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "filter",
+            "value": "Page Path contains 'category'"
+          }
+        ]
+      },
+      {
+        "triggerId": "3",
+        "name": "Select Item Trigger",
+        "type": "CLICK",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "filter",
+            "value": "Click Text matches Product Name"
+          }
+        ]
+      },
+      {
+        "triggerId": "4",
+        "name": "Add to Cart Trigger",
+        "type": "CLICK",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "filter",
+            "value": "Click Classes contains 'add-to-cart'"
+          }
+        ]
+      },
+      {
+        "triggerId": "5",
+        "name": "Begin Checkout Trigger",
+        "type": "PAGEVIEW",
+        "parameter": [
+          {
+            "type": "ENUM",
+            "key": "type",
+            "value": "PAGEVIEW"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "filter",
+            "value": "Page Path contains 'checkout'"
+          }
+        ]
+      },
+      {
+        "triggerId": "6",
+        "name": "Shipping Info Trigger",
+        "type": "CUSTOM_EVENT",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "event_name",
+            "value": "shipping_info"
+          }
+        ]
+      },
+      {
+        "triggerId": "7",
+        "name": "Payment Info Trigger",
+        "type": "CUSTOM_EVENT",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "event_name",
+            "value": "payment_info"
+          }
+        ]
+      },
+      {
+        "triggerId": "8",
+        "name": "Review Order Trigger",
+        "type": "CUSTOM_EVENT",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "event_name",
+            "value": "review_order"
+          }
+        ]
+      },
+      {
+        "triggerId": "9",
+        "name": "Purchase Trigger",
+        "type": "PAGEVIEW",
+        "parameter": [
+          {
+            "type": "ENUM",
+            "key": "type",
+            "value": "PAGEVIEW"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "filter",
+            "value": "Page Path contains 'thank-you'"
+          }
+        ]
+      },
+      {
+        "triggerId": "10",
+        "name": "Refund Trigger",
+        "type": "CUSTOM_EVENT",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "event_name",
+            "value": "refund"
+          }
+        ]
+      },
+      {
+        "triggerId": "11",
+        "name": "Custom Event - Checkout Step",
+        "type": "CUSTOM_EVENT",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "event_name",
+            "value": "checkout_step"
+          }
+        ]
+      }
+    ],
+    "tag": [
+      {
+        "tagId": "1",
+        "name": "Page View Tag",
+        "type": "GA4_EVENT",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "event_name",
+            "value": "page_view"
+          },
+          {
+            "type": "LIST",
+            "key": "event_parameters",
+            "list": [
+              {
+                "type": "TEMPLATE",
+                "key": "event_category",
+                "value": "Page Interaction"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "event_action",
+                "value": "Page View"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "event_label",
+                "value": "{{dynamic_page_title}}"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "event_id",
+                "value": "{{dynamic_page_id}}"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "event_url",
+                "value": "{{dynamic_page_url}}"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "ecommerce.page_title",
+                "value": "{{dynamic_page_title}}"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "ecommerce.page_location",
+                "value": "{{dynamic_page_url}}"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "ecommerce.page_referrer",
+                "value": "{{dynamic_referrer}}"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "user_properties.user_id",
+                "value": "{{dynamic_user_id}}"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "user_properties.user_email",
+                "value": "{{dynamic_user_email}}"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "user_properties.user_name",
+                "value": "{{dynamic_user_name}}"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "user_properties.session_id",
+                "value": "{{dynamic_session_id}}"
+              }
+            ]
+          }
+        ],
+        "trigger": [
+          {
+            "triggerId": "1"
+          }
+        ]
+      },
+      {
+        "tagId": "2",
+        "name": "Product Impression Tag",
+        "type": "GA4_EVENT",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "event_name",
+            "value": "view_item_list"
+          },
+          {
+            "type": "LIST",
+            "key": "event_parameters",
+            "list": [
+              {
+                "type": "TEMPLATE",
+                "key": "event_category",
+                "value": "Ecommerce"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "event_action",
+                "value": "Product Impression"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "event_label",
+                "value": "{{dynamic_item_list_name}}"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "event_id",
+                "value": "{{dynamic_impression_id}}"
+              },
+              {
+                "type": "LIST",
+                "key": "ecommerce.items",
+                "list": [
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_id",
+                    "value": "{{dynamic_product_id}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_name",
+                    "value": "{{dynamic_product_name}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_category",
+                    "value": "{{dynamic_product_category}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_list_name",
+                    "value": "{{dynamic_item_list_name}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_brand",
+                    "value": "{{dynamic_product_brand}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "price",
+                    "value": "{{dynamic_product_price}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "index",
+                    "value": "{{dynamic_product_index}}"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "trigger": [
+          {
+            "triggerId": "2"
+          }
+        ]
+      },
+      {
+        "tagId": "3",
+        "name": "Select Item Tag",
+        "type": "GA4_EVENT",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "event_name",
+            "value": "select_item"
+          },
+          {
+            "type": "LIST",
+            "key": "event_parameters",
+            "list": [
+              {
+                "type": "TEMPLATE",
+                "key": "event_category",
+                "value": "Ecommerce"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "event_action",
+                "value": "Product Click"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "event_label",
+                "value": "{{dynamic_product_name}}"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "event_id",
+                "value": "{{dynamic_click_id}}"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "event_url",
+                "value": "{{dynamic_product_url}}"
+              },
+              {
+                "type": "LIST",
+                "key": "ecommerce.items",
+                "list": [
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_id",
+                    "value": "{{dynamic_product_id}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_name",
+                    "value": "{{dynamic_product_name}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_category",
+                    "value": "{{dynamic_product_category}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_list_name",
+                    "value": "{{dynamic_item_list_name}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_brand",
+                    "value": "{{dynamic_product_brand}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "price",
+                    "value": "{{dynamic_product_price}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "index",
+                    "value": "{{dynamic_product_index}}"
+                  }
+                ]
+              },
+              {
+                "type": "VARIABLE",
+                "key": "ecommerce.item_list_name",
+                "value": "{{dynamic_item_list_name}}"
+              }
+            ]
+          }
+        ],
+        "trigger": [
+          {
+            "triggerId": "3"
+          }
+        ]
+      },
+      {
+        "tagId": "4",
+        "name": "Add to Cart Tag",
+        "type": "GA4_EVENT",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "event_name",
+            "value": "add_to_cart"
+          },
+          {
+            "type": "LIST",
+            "key": "event_parameters",
+            "list": [
+              {
+                "type": "TEMPLATE",
+                "key": "event_category",
+                "value": "Ecommerce"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "event_action",
+                "value": "Add to Cart"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "event_label",
+                "value": "{{dynamic_product_name}}"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "event_id",
+                "value": "{{dynamic_add_to_cart_id}}"
+              },
+              {
+                "type": "LIST",
+                "key": "ecommerce.items",
+                "list": [
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_id",
+                    "value": "{{dynamic_product_id}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_name",
+                    "value": "{{dynamic_product_name}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_category",
+                    "value": "{{dynamic_product_category}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_variant",
+                    "value": "{{dynamic_product_variant}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_brand",
+                    "value": "{{dynamic_product_brand}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "price",
+                    "value": "{{dynamic_product_price}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "quantity",
+                    "value": "{{dynamic_quantity}}"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "trigger": [
+          {
+            "triggerId": "4"
+          }
+        ]
+      },
+      {
+        "tagId": "5",
+        "name": "Begin Checkout Tag",
+        "type": "GA4_EVENT",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "event_name",
+            "value": "begin_checkout"
+          },
+          {
+            "type": "LIST",
+            "key": "event_parameters",
+            "list": [
+              {
+                "type": "TEMPLATE",
+                "key": "event_category",
+                "value": "Ecommerce"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "event_action",
+                "value": "Checkout Step 1"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "event_label",
+                "value": "Begin Checkout"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "event_id",
+                "value": "{{dynamic_checkout_id_step_1}}"
+              },
+              {
+                "type": "LIST",
+                "key": "ecommerce.items",
+                "list": [
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_id",
+                    "value": "{{dynamic_product_id}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_name",
+                    "value": "{{dynamic_product_name}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_category",
+                    "value": "{{dynamic_product_category}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_variant",
+                    "value": "{{dynamic_product_variant}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_brand",
+                    "value": "{{dynamic_product_brand}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "price",
+                    "value": "{{dynamic_product_price}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "quantity",
+                    "value": "{{dynamic_quantity}}"
+                  }
+                ]
+              },
+              {
+                "type": "VARIABLE",
+                "key": "ecommerce.value",
+                "value": "{{dynamic_cart_value}}"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "ecommerce.currency",
+                "value": "{{dynamic_currency}}"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "ecommerce.coupon",
+                "value": "{{dynamic_coupon_code}}"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "ecommerce.checkout_step",
+                "value": 1
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "ecommerce.checkout_option",
+                "value": "Begin Checkout"
+              }
+            ]
+          }
+        ],
+        "trigger": [
+          {
+            "triggerId": "5"
+          }
+        ]
+      },
+      {
+        "tagId": "6",
+        "name": "Shipping Info Tag",
+        "type": "GA4_EVENT",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "event_name",
+            "value": "add_shipping_info"
+          },
+          {
+            "type": "LIST",
+            "key": "event_parameters",
+            "list": [
+              {
+                "type": "TEMPLATE",
+                "key": "event_category",
+                "value": "Ecommerce"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "event_action",
+                "value": "Checkout Step 2"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "event_label",
+                "value": "Enter Shipping Info"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "event_id",
+                "value": "{{dynamic_checkout_id_step_2}}"
+              },
+              {
+                "type": "LIST",
+                "key": "ecommerce.items",
+                "list": [
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_id",
+                    "value": "{{dynamic_product_id}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_name",
+                    "value": "{{dynamic_product_name}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_category",
+                    "value": "{{dynamic_product_category}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_variant",
+                    "value": "{{dynamic_product_variant}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_brand",
+                    "value": "{{dynamic_product_brand}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "price",
+                    "value": "{{dynamic_product_price}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "quantity",
+                    "value": "{{dynamic_quantity}}"
+                  }
+                ]
+              },
+              {
+                "type": "VARIABLE",
+                "key": "ecommerce.shipping_tier",
+                "value": "{{dynamic_shipping_tier}}"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "ecommerce.checkout_step",
+                "value": 2
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "ecommerce.checkout_option",
+                "value": "Shipping Info"
+              }
+            ]
+          }
+        ],
+        "trigger": [
+          {
+            "triggerId": "6"
+          }
+        ]
+      },
+      {
+        "tagId": "7",
+        "name": "Payment Info Tag",
+        "type": "GA4_EVENT",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "event_name",
+            "value": "add_payment_info"
+          },
+          {
+            "type": "LIST",
+            "key": "event_parameters",
+            "list": [
+              {
+                "type": "TEMPLATE",
+                "key": "event_category",
+                "value": "Ecommerce"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "event_action",
+                "value": "Checkout Step 3"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "event_label",
+                "value": "Enter Payment Info"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "event_id",
+                "value": "{{dynamic_checkout_id_step_3}}"
+              },
+              {
+                "type": "LIST",
+                "key": "ecommerce.items",
+                "list": [
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_id",
+                    "value": "{{dynamic_product_id}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_name",
+                    "value": "{{dynamic_product_name}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_category",
+                    "value": "{{dynamic_product_category}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_variant",
+                    "value": "{{dynamic_product_variant}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_brand",
+                    "value": "{{dynamic_product_brand}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "price",
+                    "value": "{{dynamic_product_price}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "quantity",
+                    "value": "{{dynamic_quantity}}"
+                  }
+                ]
+              },
+              {
+                "type": "VARIABLE",
+                "key": "ecommerce.payment_type",
+                "value": "{{dynamic_payment_type}}"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "ecommerce.checkout_step",
+                "value": 3
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "ecommerce.checkout_option",
+                "value": "Payment Info"
+              }
+            ]
+          }
+        ],
+        "trigger": [
+          {
+            "triggerId": "7"
+          }
+        ]
+      },
+      {
+        "tagId": "8",
+        "name": "Review Order Tag",
+        "type": "GA4_EVENT",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "event_name",
+            "value": "checkout_progress"
+          },
+          {
+            "type": "LIST",
+            "key": "event_parameters",
+            "list": [
+              {
+                "type": "TEMPLATE",
+                "key": "event_category",
+                "value": "Ecommerce"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "event_action",
+                "value": "Checkout Step 4"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "event_label",
+                "value": "Review Order"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "event_id",
+                "value": "{{dynamic_checkout_id_step_4}}"
+              },
+              {
+                "type": "LIST",
+                "key": "ecommerce.items",
+                "list": [
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_id",
+                    "value": "{{dynamic_product_id}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_name",
+                    "value": "{{dynamic_product_name}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_category",
+                    "value": "{{dynamic_product_category}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_variant",
+                    "value": "{{dynamic_product_variant}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_brand",
+                    "value": "{{dynamic_product_brand}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "price",
+                    "value": "{{dynamic_product_price}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "quantity",
+                    "value": "{{dynamic_quantity}}"
+                  }
+                ]
+              },
+              {
+                "type": "VARIABLE",
+                "key": "ecommerce.checkout_step",
+                "value": 4
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "ecommerce.checkout_option",
+                "value": "Review Order"
+              }
+            ]
+          }
+        ],
+        "trigger": [
+          {
+            "triggerId": "8"
+          }
+        ]
+      },
+      {
+        "tagId": "9",
+        "name": "Purchase Tag",
+        "type": "GA4_EVENT",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "event_name",
+            "value": "purchase"
+          },
+          {
+            "type": "LIST",
+            "key": "event_parameters",
+            "list": [
+              {
+                "type": "TEMPLATE",
+                "key": "event_category",
+                "value": "Ecommerce"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "event_action",
+                "value": "Checkout Step 5"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "event_label",
+                "value": "{{dynamic_transaction_id}}"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "event_id",
+                "value": "{{dynamic_transaction_id}}"
+              },
+              {
+                "type": "LIST",
+                "key": "ecommerce.items",
+                "list": [
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_id",
+                    "value": "{{dynamic_product_id}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_name",
+                    "value": "{{dynamic_product_name}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_category",
+                    "value": "{{dynamic_product_category}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_variant",
+                    "value": "{{dynamic_product_variant}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_brand",
+                    "value": "{{dynamic_product_brand}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "price",
+                    "value": "{{dynamic_product_price}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "quantity",
+                    "value": "{{dynamic_quantity}}"
+                  }
+                ]
+              },
+              {
+                "type": "VARIABLE",
+                "key": "ecommerce.transaction_id",
+                "value": "{{dynamic_transaction_id}}"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "ecommerce.affiliation",
+                "value": "{{dynamic_affiliation}}"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "ecommerce.value",
+                "value": "{{dynamic_order_value}}"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "ecommerce.currency",
+                "value": "{{dynamic_currency}}"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "ecommerce.tax",
+                "value": "{{dynamic_tax}}"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "ecommerce.shipping",
+                "value": "{{dynamic_shipping_cost}}"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "ecommerce.coupon",
+                "value": "{{dynamic_coupon_code}}"
+              }
+            ]
+          }
+        ],
+        "trigger": [
+          {
+            "triggerId": "9"
+          }
+        ]
+      },
+      {
+        "tagId": "10",
+        "name": "Refund Tag",
+        "type": "GA4_EVENT",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "event_name",
+            "value": "refund"
+          },
+          {
+            "type": "LIST",
+            "key": "event_parameters",
+            "list": [
+              {
+                "type": "TEMPLATE",
+                "key": "event_category",
+                "value": "Ecommerce"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "event_action",
+                "value": "Refund"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "event_label",
+                "value": "{{dynamic_transaction_id}}"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "event_id",
+                "value": "{{dynamic_refund_id}}"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "ecommerce.transaction_id",
+                "value": "{{dynamic_transaction_id}}"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "ecommerce.value",
+                "value": "{{dynamic_refund_value}}"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "ecommerce.currency",
+                "value": "{{dynamic_currency}}"
+              },
+              {
+                "type": "LIST",
+                "key": "ecommerce.items",
+                "list": [
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_id",
+                    "value": "{{dynamic_product_id}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "item_name",
+                    "value": "{{dynamic_product_name}}"
+                  },
+                  {
+                    "type": "VARIABLE",
+                    "key": "quantity",
+                    "value": "{{dynamic_quantity}}"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "trigger": [
+          {
+            "triggerId": "10"
+          }
+        ]
+      },
+      {
+        "tagId": "11",
+        "name": "Checkout Step Tag",
+        "type": "GA4_EVENT",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "event_name",
+            "value": "checkout_progress"
+          },
+          {
+            "type": "LIST",
+            "key": "event_parameters",
+            "list": [
+              {
+                "type": "VARIABLE",
+                "key": "checkout_step",
+                "value": "{{dynamic_checkout_step}}"
+              },
+              {
+                "type": "VARIABLE",
+                "key": "cart_value",
+                "value": "{{dynamic_cart_value}}"
+              }
+            ]
+          }
+        ],
+        "trigger": [
+          {
+            "triggerId": "11"
+          }
+        ]
+      }
+    ]
+  }
+}
