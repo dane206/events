@@ -1,0 +1,83 @@
+{
+  "eCommerceTrackingTemplate": {
+    "events": [
+      {
+        "event": "page_view",
+        "trigger": "page_load",
+        "variables": {
+          "page_title": "{{Page Title}}",
+          "page_url": "{{Page URL}}",
+          "user_id": "{{User ID}}",
+          "session_id": "{{Session ID}}"
+        },
+        "remarks": "Because who doesn’t want to know who’s snooping around?"
+      },
+      {
+        "event": "product_view",
+        "trigger": "dom_ready",
+        "variables": {
+          "product_id": "{{Product ID}}",
+          "product_name": "{{Product Name}}",
+          "category": "{{Product Category}}",
+          "price": "{{Product Price}}"
+        },
+        "remarks": "Yes, they’re window-shopping again. Let’s hope this time they add to cart."
+      },
+      {
+        "event": "add_to_cart",
+        "trigger": "click",
+        "variables": {
+          "product_id": "{{Product ID}}",
+          "quantity": "{{Quantity}}",
+          "cart_value": "{{Cart Value}}"
+        },
+        "remarks": "A small victory in the war of conversions."
+      },
+      {
+        "event": "checkout_initiated",
+        "trigger": "click",
+        "variables": {
+          "cart_value": "{{Cart Value}}",
+          "shipping_method": "{{Shipping Method}}",
+          "payment_method": "{{Payment Method}}"
+        },
+        "remarks": "The moment of truth. Will they or won’t they?"
+      },
+      {
+        "event": "purchase",
+        "trigger": "transaction_complete",
+        "variables": {
+          "transaction_id": "{{Transaction ID}}",
+          "order_value": "{{Order Value}}",
+          "shipping_cost": "{{Shipping Cost}}",
+          "tax": "{{Tax}}"
+        },
+        "remarks": "Cha-ching! Finally, something to celebrate."
+      },
+      {
+        "event": "history_change",
+        "trigger": "history_change",
+        "variables": {
+          "previous_url": "{{Previous URL}}",
+          "current_url": "{{Current URL}}"
+        },
+        "remarks": "Someone’s getting nostalgic, let’s track that."
+      }
+    ],
+    "trigger_groups": [
+      {
+        "name": "Standard Ecommerce Triggers",
+        "triggers": ["page_load", "dom_ready", "click", "transaction_complete", "history_change"],
+        "remarks": "The usual suspects in the tracking lineup."
+      }
+    ],
+    "timers": [
+      {
+        "name": "Session Timer",
+        "interval": 30,
+        "unit": "minutes",
+        "remarks": "Because staring at a screen for 30 minutes deserves to be tracked."
+      }
+    ]
+  }
+}
