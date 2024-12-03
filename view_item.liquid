@@ -1,0 +1,41 @@
+<script id="view_item">
+  (function() {
+    window.dataLayer = window.dataLayer || [];
+
+    {% if product %}
+    window.dataLayer.push({
+        event: "view_item",
+        ecommerce: {
+            currency: "USD", // Replace with dynamic currency if available
+            value: parseFloat("{{ product.price | money_without_currency | replace: ',', '' }}"), // Total value
+            items: [
+                {
+                    item_id: "{{ product.id }}", // Unique ID for the item
+                    item_name: "{{ product.title | escape }}", // Name of the item
+                    item_brand: "{{ product.vendor | escape }}", // Brand of the item
+                    price: parseFloat("{{ product.price | money_without_currency | replace: ',', '' }}"), // Numeric price
+                    quantity: 1 // Default quantity
+                }
+            ]
+        }
+    });
+
+    console.log("GA4 view_item event pushed:", {
+        event: "view_item",
+        ecommerce: {
+            currency: "USD",
+            value: parseFloat("{{ product.price | money_without_currency | replace: ',', '' }}"),
+            items: [
+                {
+                    item_id: "{{ product.id }}",
+                    item_name: "{{ product.title | escape }}",
+                    item_brand: "{{ product.vendor | escape }}",
+                    price: parseFloat("{{ product.price | money_without_currency | replace: ',', '' }}"),
+                    quantity: 1
+                }
+            ]
+        }
+    });
+    {% endif %}
+  })();
+</script>
